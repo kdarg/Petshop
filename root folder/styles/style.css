@@ -1,3 +1,66 @@
+.sidebar{
+        position:fixed;
+        left:-8rem;
+        height:100%;
+        width:12.5rem;
+        background-color:#787878;
+        transition:all .5s ease;
+}
+
+.sidebar ul{
+        height:90vh;
+        margin-top:3rem;
+        display:flex;
+        justify-content:space-around;
+        flex-direction:column;
+}
+
+.sidebar ul a{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:1rem;
+        color:white;
+        text-decoration:none;
+        font-weight:bold;
+        font-size:1rem;
+        transition:all .2s ease;
+        visibility:hidden;
+}
+
+.sidebar ul a:hover{
+        padding-left:2rem;
+        background-color:#bd9997;
+}
+
+#check{
+        display:none;
+}
+
+label{
+        position:absolute;
+        top:1rem;
+        left:1.79rem;
+        cursor:pointer;
+        font-weight:bold;
+        color:white;
+        z-index:1111;
+        transition:all .5s ease;
+}
+
+#check:checked ~ .sidebar{
+        left:0;
+}
+
+#check:checked ~ label{
+        left:6.3rem;
+}
+
+#check:checked ~ .sidebar ul a{
+        visibility:visible;
+}
+
+
 body::-webkit-scrollbar{
     width: 15px;
     }
