@@ -1,3 +1,7 @@
+main, header, footer{
+	margin-left:7rem !important;
+}
+
 .sidebar{
         position:fixed;
         left:-8rem;
@@ -16,6 +20,7 @@
 }
 
 .sidebar ul a{
+	position:relative;
         display:flex;
         justify-content:center;
         align-items:center;
@@ -24,8 +29,8 @@
         text-decoration:none;
         font-weight:bold;
         font-size:1rem;
-        transition:all .2s ease;
-        visibility:hidden;
+        transition:all 200ms ease;
+	visibility:hidden;
 }
 
 .sidebar ul a:hover{
@@ -60,6 +65,15 @@ label{
         visibility:visible;
 }
 
+#check:checked ~ nav ~ *{
+	margin-left:10rem;
+	opacity:0.5;
+	transition: all .5s ease;
+}
+
+#main{
+	transition: all .5s ease;
+}
 
 body::-webkit-scrollbar{
     width: 15px;
