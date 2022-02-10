@@ -1,0 +1,19 @@
+- logo - FRANCO -todas las paginas
+
+- index - bienvenidos a mi tienda- fotos - parrafo con historia - donde estamos - "etc" - google maps 
+
+- contact con formulario//  nombre apellido, telefono tipo de animal perro o gato, comentarios (text area) - boton alert "enviado y gracias" - agregar campo extra
+
+//VER DONDE COLOCAR COMENTARIOS//
+
+- farmacia//fotos ilustrativas + articulos//api // card // <5 articulos "ultimas unidades" 
+
+- juguetes//fotos ilustrativas + articulos //api // card // <5 articulos "ultimas unidades"
+
+PROXIMAMENTE//peluqueria canina 
+
+REFUGIO	// donar a refugio
+
+FOOTER - MAP - medios de pago> TARJETAS - horarios de atencion - telefono - promociones?
+
+boton que sube arriba - 
