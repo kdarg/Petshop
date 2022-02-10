@@ -1,2 +1,2 @@
 # Petshop
-Hellow, this ir our proyect.
+Hello, this ir our proyect.
