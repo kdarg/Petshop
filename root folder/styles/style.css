@@ -4,19 +4,27 @@ main, header, footer{
 
 .sidebar{
         position:fixed;
-        left:-8rem;
+        left:-5rem;
         height:100%;
-        width:12.5rem;
+        width:9rem;
         background-color:#787878;
         transition:all .5s ease;
 }
 
 .sidebar ul{
         height:90vh;
+	padding:0;
         margin-top:3rem;
         display:flex;
         justify-content:space-around;
         flex-direction:column;
+	list-style-type:none;
+}
+
+.sidebar ul li{
+	display:flex;
+	justify-content:center;
+	align-items:center;
 }
 
 .sidebar ul a{
@@ -31,11 +39,13 @@ main, header, footer{
         font-size:1rem;
         transition:all 200ms ease;
 	visibility:hidden;
+	border-radius:8rem;
 }
 
 .sidebar ul a:hover{
         padding-left:2rem;
         background-color:#bd9997;
+	padding:1.5rem;
 }
 
 #check{
@@ -45,12 +55,14 @@ main, header, footer{
 label{
         position:absolute;
         top:1rem;
-        left:1.79rem;
+        left:1.2rem;
         cursor:pointer;
         font-weight:bold;
         color:white;
         z-index:1111;
         transition:all .5s ease;
+	width:30;
+	height:30;
 }
 
 #check:checked ~ .sidebar{
@@ -58,7 +70,7 @@ label{
 }
 
 #check:checked ~ label{
-        left:6.3rem;
+        left:3.7rem;
 }
 
 #check:checked ~ .sidebar ul a{
@@ -74,6 +86,11 @@ label{
 #main{
 	transition: all .5s ease;
 }
+
+#open_sb:hover{
+	color:blue;
+}
+
 
 body::-webkit-scrollbar{
     width: 15px;
