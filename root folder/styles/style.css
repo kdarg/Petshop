@@ -1,8 +1,11 @@
 main, header, footer{
-	margin-left:7rem !important;
+    width:100%;
+    
+ 
 }
 
 .sidebar{
+        z-index:1;
         position:fixed;
         left:-5rem;
         height:100%;
@@ -53,7 +56,7 @@ main, header, footer{
 }
 
 label{
-        position:absolute;
+        position:fixed;
         top:1rem;
         left:1.2rem;
         cursor:pointer;
@@ -78,7 +81,7 @@ label{
 }
 
 #check:checked ~ nav ~ *{
-	margin-left:10rem;
+
 	opacity:0.5;
 	transition: all .5s ease;
 }
@@ -99,4 +102,121 @@ body::-webkit-scrollbar{
 body::-webkit-scrollbar-thumb{
     background-color: rgb(5, 225, 233);
     border-radius: 5px;
+    }
+         
+
+#logo{
+    position:fixed;
+    width:3rem;
+    height:3rem;
+    margin:0;
+    padding:0;
+    background-color:white;
+    border-radius:25px;
+}
+
+    /*    ////////////////////LEANDRO///////////////// */
+    .header{
+        display:flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-image: url(../assets/perro-Schnauzer.jpg);
+        height:50vh;
+        width:100%;
+        background-size: cover;
+        background-position-y:38%;
+        margin:0;
+        padding:0;
+    }
+    .header h1{
+        border-radius:10px;
+        color:white;
+        background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
+        width: 70%;
+        text-align:center;
+        padding: 2px;
+        height: 1.4em;
+    }
+    .card2{
+        display:flex;
+        justify-content:space-around;
+        flex-wrap:wrap;
+        width:100%;
+   }
+    body{
+        align-items:center;
+        justify-content:center;
+        min-height:100vh;
+        background: rgb(9, 74, 136);
+        width: 100%;
+
+    }
+    .card{
+        position:relative;
+        width:35vw;
+        height:45vh;
+        margin-top:3em;
+        margin-bottom:3em;
+    }
+    .card .face{
+        position:absolute;
+        width:100%;
+        height:100%;
+        backface-visibility: hidden;
+        border-radius:10px;
+        overflow:hidden;
+        transition: .5s;
+    }
+    .card .front{
+        transform:perspective(600px) rotateY(0deg);
+        box-shadow:0px 5px 10px #000;
+    }
+    .card .front img{
+        position:absolute;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+    .card .front h3{
+        position:absolute;
+        bottom:4rem;
+        width:100%;
+        height:45px;
+        line-height: 45px;
+        color:#fff;
+        background: rgba(0,0,0,.4);
+        text-align: center;
+        
+    }
+    .card .back{
+        transform:perspective(600px) rotateY(180deg);
+        background:rgb(3,35,54);
+        padding:15px;
+        color:#f3f3f3;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        text-align:center;
+        box-shadow: 0 5px 10px #000;
+    }
+    .card .back .link{
+        border-top:solid 1px #f3f3f3;
+        height: 50px;
+        line-height: 50px;
+    
+    }
+    .card .back .link a{
+        color:#f3f3f3;
+    
+    }
+    .card .back h3{
+        font-size:30px;
+        margin-top:20px;
+        letter-spacing:2px;
+    }
+    .card:hover .front{
+        transform: perspective(600px) rotateY(180deg);
+    }
+    .card:hover .back{
+        transform: perspective(600px) rotateY(360deg);
     }
