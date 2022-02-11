@@ -61,7 +61,7 @@ h1,h2{
         display:none;
 }
 
-label{
+#open_sb{
         position:fixed;
         top:1rem;
         left:.5rem;
@@ -92,7 +92,7 @@ label{
         left:0;
 }
 
-#check:checked ~ label{
+#check:checked ~ #open_sb{
         left:3rem;
 }
 
@@ -131,6 +131,7 @@ background-size: cover;
 background-position:50% 35%;
 margin:0;
 padding:0;
+
 }
 .header h1{
 border-radius:10px;
@@ -473,3 +474,30 @@ color: white;
 background-color: rgb(20, 20, 160);
 transition: .3s;
 }
+
+
+/* ----------------------------------formulario */
+
+.header-contact{
+        display:flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-image: url(../assets/gato-contact.jpeg);
+        height:60vh;
+        width:100%;
+        background-size: cover;
+        background-position:50% 60%;
+        margin:0;
+        padding:0;
+
+        }
+.header-contact h1{
+        border-radius:10px;
+        color:white;
+        background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
+        width: 70%;
+        text-align:center;
+        padding: 2px;
+        height: 1.4em;
+        }
+
