@@ -10,7 +10,7 @@
 
     <script src="https://kit.fontawesome.com/a7977cc4bc.js" crossorigin="anonymous"></script>
 
-    <title>Pet Shop Franco</title>
+    <title id='contacto' class='page'>Pet Shop Franco</title>
 </head>
 <body>
 
@@ -25,7 +25,7 @@
 
 	<nav class='sidebar'>
 		<ul>
-			<li><a href='#' class='fs-4'><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house-heart-fill fs-4" viewBox="0 0 16 16">
+			<li><a href='index.html' class='fs-4'><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house-heart-fill fs-4" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L8 2.207l6.646 6.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
   <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Zm0 5.189c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.691 0-5.018Z"/>
 </svg></a></li>
@@ -38,7 +38,7 @@
   <path fill-rule="evenodd" d="M8 0C3.584 0 0 3.584 0 8s3.584 8 8 8c4.408 0 8-3.584 8-8s-3.592-8-8-8zm5.284 3.688a6.802 6.802 0 0 1 1.545 4.251c-.226-.043-2.482-.503-4.755-.217-.052-.112-.096-.234-.148-.355-.139-.33-.295-.668-.451-.99 2.516-1.023 3.662-2.498 3.81-2.69zM8 1.18c1.735 0 3.323.65 4.53 1.718-.122.174-1.155 1.553-3.584 2.464-1.12-2.056-2.36-3.74-2.551-4A6.95 6.95 0 0 1 8 1.18zm-2.907.642A43.123 43.123 0 0 1 7.627 5.77c-3.193.85-6.013.833-6.317.833a6.865 6.865 0 0 1 3.783-4.78zM1.163 8.01V7.8c.295.01 3.61.053 7.02-.971.199.381.381.772.555 1.162l-.27.078c-3.522 1.137-5.396 4.243-5.553 4.504a6.817 6.817 0 0 1-1.752-4.564zM8 14.837a6.785 6.785 0 0 1-4.19-1.44c.12-.252 1.509-2.924 5.361-4.269.018-.009.026-.009.044-.017a28.246 28.246 0 0 1 1.457 5.18A6.722 6.722 0 0 1 8 14.837zm3.81-1.171c-.07-.417-.435-2.412-1.328-4.868 2.143-.338 4.017.217 4.251.295a6.774 6.774 0 0 1-2.924 4.573z"/>
 </svg></a></li>
 
-			<li><a href='contact.html'><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope-paper-heart-fill" viewBox="0 0 16 16">
+			<li><a href='#'><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-envelope-paper-heart-fill" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="m3 7.5 3.5 2L8 8.75l1.5.75 3.5-2v-6A1.5 1.5 0 0 0 11.5 0h-7A1.5 1.5 0 0 0 3 1.5v6ZM2 3.133l-.941.502A2 2 0 0 0 0 5.4v.313l2 1.173V3.133Zm12 3.753 2-1.173V5.4a2 2 0 0 0-1.059-1.765L14 3.133v3.753Zm-3.693 3.324L16 6.873v6.5l-5.693-3.163Zm5.634 4.274L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516ZM5.693 10.21 0 13.372v-6.5l5.693 3.338ZM8 1.982C9.664.309 13.825 3.236 8 7 2.175 3.236 6.336.31 8 1.982Z"/>
 </svg></a></li>
 
@@ -69,65 +69,68 @@
                     
             <div class="mb-3">
                 <label for="exampleName" class="form-label fw-bold">Nombre y apellido </label>
-                <input type="text" class="form-control" id="exampleName" placeholder="Nombre y apellido">
+                <input type="text" class="form-control check-len" id="exampleName" placeholder="Nombre y apellido">
             </div>
 
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label fw-bold">Teléfono</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Sólo números sin guiones">
+                <input type="text" class="form-control check-len" id="exampleInputEmail1" placeholder="Sólo números sin guiones">
             </div>
             
             <div class="mb-3">
                 <label for="nombreMascota" class="form-label fw-bold">Nombre de tu mascota </label>
-                <input type="text" class="form-control" id="nombreMascota" placeholder="Nombre de tu mascota">
+                <input type="text" class="form-control check-len" id="nombreMascota" placeholder="Nombre de tu mascota">
             </div>
 
             <div class="mb-3">
               <label for="edadMascota" class="form-label fw-bold">Edad</label>
-              <input type="text" class="form-control" id="edadMascota" placeholder="Edad">
+              <input type="text" class="form-control check-len" id="edadMascota" placeholder="Edad">
           </div>
 
             <div class="mb-3">
                 <label for="razaMascota" class="form-label fw-bold">Raza </label>
-                <input type="text" class="form-control" id="razaMascota" placeholder="Raza">
+                <input type="text" class="form-control check-len" id="razaMascota" placeholder="Raza">
             </div>
                 
             <div class="mb-3">
-                <label for="Select" class="form-label fw-bold">Mascota</label>
-                <select id="Select" class="form-select">
-                <option class="colordelselect">Seleccione...</option>
-                <option value="gato">Gato/a</option>
-                <option value="perro">Perro/a</option>
-                </select>
+                <label for="Checkbox" class="form-label fw-bold">Gato/a</label>
+		<input id='Checkbox' type='radio' name='check' class='check-len'>
+                <label for="Checkbox" class="form-label fw-bold">Perro/a</label>
+		<input id='Checkbox' type='radio' name='check' class='check-len'>
             </div>
 
             <div class="mb-3">
-                <label for="Select-dos" class="form-label fw-bold">Sexo</label>
-                <select id="Select-dos" class="form-select">
-                <option class="colordelselect">Seleccione...</option>
-                <option value="gato">Macho</option>
-                <option value="perro">Hembra</option>
-                </select>
-
-
-            <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="aceptacion">
-            <label class="form-check-label" for="aceptacion">Toda la información dada es real.</label>
+                <label for="Checkbox" class="form-label fw-bold">Macho</label>
+		<input id='Checkbox' type='radio' name='check' class='check-len'>
+                <label for="Checkbox" class="form-label fw-bold">Hembra</label>
+		<input id='Checkbox' type='radio' name='check' class='check-len'>
             </div>
 
+	    <div class='mb-3'>
+		    <label for='Textarea' class='form-label fw-bold'>Reseña</label>
+		    <input type='textarea' id='Textarea' class="form-control md-textarea" rows="3">
+	    </div>
 
-            <button type="submit" class="btn btn-success">Continuar</button>
+            <div class="mb-3 form-check">
+		<input type="checkbox" class="form-check-input check-len" id="aceptacion">
+		<label class="form-check-label check-len" for="aceptacion">Toda la información dada es real.</label>
+            </div>
+
         </form>
-          
+
+
+	<button type="submit" class="btn btn-success" id='submit'>Continuar</button>
+
           </div>
           </div>
       </div>
       </div>
   </div>
-
-    </main>
+</main>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script type='module' src='./javascript/app.js'></script>
 </body>
 </html>
