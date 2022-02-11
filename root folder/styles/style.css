@@ -2,8 +2,7 @@
 
 main, header, footer{
     width:100%;
-    
- 
+    transition: opacity .5s ease;
 }
 h1,h2{
     font-family: 'Staatliches', cursive;
@@ -30,9 +29,12 @@ h1,h2{
 }
 
 .sidebar ul li{
+	position:relative;
+	left:-10rem;
 	display:flex;
 	justify-content:center;
 	align-items:center;
+	transition:all .6s ease;
 }
 
 .sidebar ul a{
@@ -46,7 +48,6 @@ h1,h2{
         font-weight:bold;
         font-size:1rem;
         transition:all 200ms ease;
-	visibility:hidden;
 	border-radius:8rem;
 }
 
@@ -63,7 +64,7 @@ h1,h2{
 label{
         position:fixed;
         top:1rem;
-        left:1.2rem;
+        left:.5rem;
         cursor:pointer;
         font-weight:bold;
         color:white;
@@ -73,26 +74,35 @@ label{
 	height:30;
 }
 
+#logo{
+    position:fixed;
+    width:3rem;
+    height:3rem;
+    margin:0;
+    padding:0;
+    border-radius:8rem;
+    transition:all .5s ease;
+}
+
+#logo:hover{
+	background-color:white;
+}
+
 #check:checked ~ .sidebar{
         left:0;
 }
 
 #check:checked ~ label{
-        left:3.7rem;
+        left:3rem;
 }
 
-#check:checked ~ .sidebar ul a{
-        visibility:visible;
+#check:checked ~ .sidebar ul li{
+	left:0;
 }
 
 #check:checked ~ nav ~ *{
-
 	opacity:0.5;
-	transition: all .5s ease;
-}
-
-#main{
-	transition: all .5s ease;
+	transition: opacity .5s ease;
 }
 
 #open_sb:hover{
@@ -109,368 +119,357 @@ body::-webkit-scrollbar-thumb{
     border-radius: 5px;
     }
          
-
-#logo{
-    position:fixed;
-    width:3rem;
-    height:3rem;
-    margin:0;
-    padding:0;
-    background-color:white;
-    border-radius:25px;
-}
-
     /*    ////////////////////LEANDRO///////////////// */
-    .header{
-        display:flex;
-        justify-content: center;
-        align-items: flex-end;
-        background-image: url(../assets/perro-Schnauzer.jpg);
-        height:60vh;
-        width:100%;
-        background-size: cover;
-        background-position:50% 35%;
-        margin:0;
-        padding:0;
-    }
-    .header h1{
-        border-radius:10px;
-        color:white;
-        background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
-        width: 70%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* text-align:center; */
-        padding: 2px;
-        height: 1.4em;
-    }
-    .card2{
-        display:flex;
-        justify-content:space-evenly;
-        flex-wrap:wrap;
-        width:100%;
-   }
-    body{
-        align-items:center;
-        justify-content:center;
-        min-height:100vh;
-        background: rgb(9, 74, 136);
-        width: 100%;
+.header{
+display:flex;
+justify-content: center;
+align-items: flex-end;
+background-image: url(../assets/perro-Schnauzer.jpg);
+height:60vh;
+width:100%;
+background-size: cover;
+background-position:50% 35%;
+margin:0;
+padding:0;
+}
+.header h1{
+border-radius:10px;
+color:white;
+background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
+width: 70%;
+display: flex;
+justify-content: center;
+align-items: center;
+/* text-align:center; */
+padding: 2px;
+height: 1.4em;
+}
+.card2{
+display:flex;
+justify-content:space-evenly;
+flex-wrap:wrap;
+width:100%;
+}
+body{
+align-items:center;
+justify-content:center;
+min-height:100vh;
+background: rgb(9, 74, 136);
+width: 100%;
 
-    }
-    .card{
-        position:relative;
-        width:35rem;
-        height:25rem;
-        margin-top:5em;
-        margin-bottom:2em;
-    }
-    .card .face{
-        position:absolute;
-        width:100%;
-        height:100%;
-        backface-visibility: hidden;
-        border-radius:10px;
-        overflow:hidden;
-        transition: .5s;
-    }
-    .card .front{
-        transform:perspective(600px) rotateY(0deg);
-        box-shadow:0px 5px 10px #000;
-    }
-    .card .front img{
-        position:absolute;
-        width:100%;
-        height:100%;
-        object-fit:cover;
-    }
-    .card .front h3{
-        position:absolute;
-        bottom:4rem;
-        width:100%;
-        height:45px;
-        line-height: 45px;
-        color:#fff;
-        background: rgba(0,0,0,.4);
-        text-align: center;
-        
-    }
-    .card .back{
-        transform:perspective(600px) rotateY(180deg);
-        background:rgb(3,35,54);
-        padding:15px;
-        color:#f3f3f3;
-        display:flex;
-        flex-direction:column;
-        justify-content:space-between;
-        text-align:center;
-        box-shadow: 0 5px 10px #000;
-    }
-    .card .back .link{
-        border-top:solid 1px #f3f3f3;
-        height: 50px;
-        line-height: 50px;
-    
-    }
-    .card .back .link a{
-        color:#f3f3f3;
-    
-    }
-    .card .back h3{
-        font-size:30px;
-        margin-top:20px;
-        letter-spacing:2px;
-    }
-    .card:hover .front{
-        transform: perspective(600px) rotateY(180deg);
-    }
-    .card:hover .back{
-        transform: perspective(600px) rotateY(360deg);
-    }
+}
+.card{
+position:relative;
+width:35rem;
+height:25rem;
+margin-top:5em;
+margin-bottom:2em;
+}
+.card .face{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility: hidden;
+border-radius:10px;
+overflow:hidden;
+transition: .5s;
+}
+.card .front{
+transform:perspective(600px) rotateY(0deg);
+box-shadow:0px 5px 10px #000;
+}
+.card .front img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+.card .front h3{
+position:absolute;
+bottom:4rem;
+width:100%;
+height:45px;
+line-height: 45px;
+color:#fff;
+background: rgba(0,0,0,.4);
+text-align: center;
+
+}
+.card .back{
+transform:perspective(600px) rotateY(180deg);
+background:rgb(3,35,54);
+padding:15px;
+color:#f3f3f3;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+text-align:center;
+box-shadow: 0 5px 10px #000;
+}
+.card .back .link{
+border-top:solid 1px #f3f3f3;
+height: 50px;
+line-height: 50px;
+
+}
+.card .back .link a{
+color:#f3f3f3;
+
+}
+.card .back h3{
+font-size:30px;
+margin-top:20px;
+letter-spacing:2px;
+}
+.card:hover .front{
+transform: perspective(600px) rotateY(180deg);
+}
+.card:hover .back{
+transform: perspective(600px) rotateY(360deg);
+}
 /* /////////////////////////////////////////////////Mauri//////////////////////// */
 
 .container-cards {
-    max-width: 1200px;
-    margin: auto;
-    /* margin-top: 100px; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+max-width: 1200px;
+margin: auto;
+/* margin-top: 100px; */
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
 }
 
 .card-personal {
-    width: 300px;
-    margin: 10px;
+width: 300px;
+margin: 10px;
 }
 
 .card-personal:hover {
-    /* width: 350px; */
-    transition: all 600ms;
+/* width: 350px; */
+transition: all 600ms;
 }
 
 .card-personal:hover .cover img {
-    top: 0;
-    transition: all 400ms;
-    filter: none;
+top: 0;
+transition: all 400ms;
+filter: none;
 }
 
 .custom-img {
-    width: 250px;
+width: 250px;
 }
 
 .card-personal .cover {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
+position: relative;
+width: 100%;
+height: 250px;
+overflow: hidden;
 }
 
 .card-personal .cover img {
-    width: 250px;
-    display: block;
-    position: relative;
-    z-index: 1;
-    top: 40px;
-    margin-left: 1rem;
-    filter: drop-shadow(5px 5px 4px rgba( 0,0,0,0.5));
+width: 250px;
+display: block;
+position: relative;
+z-index: 1;
+top: 40px;
+margin-left: 1rem;
+filter: drop-shadow(5px 5px 4px rgba( 0,0,0,0.5));
 }
 
 .card-personal .img-back {
-    width: 100%;
-    height: 200px;
-    position: absolute;
-    background-size: cover;
-    bottom: -80px;
-    left: 0;
-    border-radius: 20px;
-    transition: all 300ms;
+width: 100%;
+height: 200px;
+position: absolute;
+background-size: cover;
+bottom: -80px;
+left: 0;
+border-radius: 20px;
+transition: all 300ms;
 }
 
 .card-personal:nth-of-type(1) .img-back {
-    background-image: url(../assets/background-personal.jpg);
+background-image: url(../assets/background-personal.jpg);
 }
 .card-personal:nth-of-type(2) .img-back {
-    background-image: url(../assets/background-personal.jpg);
+background-image: url(../assets/background-personal.jpg);
 }
 .card-personal:nth-of-type(3) .img-back {
-    background-image: url(../assets/background-personal.jpg);
+background-image: url(../assets/background-personal.jpg);
 }
 
 .card-personal:hover .img-back {
-    bottom: -40px;
+bottom: -40px;
 }
 
 .card-personal .description {
-    background-color: white;
-    margin-top: -10px;
-    padding: 20px;
-    border-radius: 0px 0px 20px 20px;
-    transition: all 300ms;
+background-color: white;
+margin-top: -10px;
+padding: 20px;
+border-radius: 0px 0px 20px 20px;
+transition: all 300ms;
 }
 
 
 .card-personal .description h2 {
-    margin-top: 10px;
+margin-top: 10px;
 }
 
 .card-personal .description p {
-    margin-top: 10px;
+margin-top: 10px;
 }
 
 .card-personal .description input {
-    padding: 10px 40px;
-    margin-top: 20px;
-    border: none;
-    background-color: blueviolet;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 300ms;
+padding: 10px 40px;
+margin-top: 20px;
+border: none;
+background-color: blueviolet;
+color: white;
+font-size: 14px;
+cursor: pointer;
+border-radius: 8px;
+transition: all 300ms;
 }
 
 .card-personal .description input:hover {
-    background-color: rgb(88, 24, 148);
+background-color: rgb(88, 24, 148);
 }
 
 .custom-input {
-    display: flex;
-    justify-content: center;
+display: flex;
+justify-content: center;
 }
 
 .custom-h2 {
-    display: flex;
-    justify-content: center;
+display: flex;
+justify-content: center;
 }
 
 .custom-p{
-    margin-left: 2.2rem;
+margin-left: 2.2rem;
 }
 
 .conocenos h2{
-    border-radius:10px;
-    color:white;
-    background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* text-align:center; */
-    margin-top: 1em;
-    height: 1.4em;
+border-radius:10px;
+color:white;
+background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+/* text-align:center; */
+margin-top: 1em;
+height: 1.4em;
 }
 
 /*Juguetes*/
 .header-juguetes{
-    display:flex;
-        justify-content: center;
-        align-items: flex-end;
-        background-image: url(../assets/perrocomiendo.jpg);
-        height:60vh;
-        width:100%;
-        background-size: cover;
-        background-position:50% 35%;
-        margin:0;
-        padding:0;
+display:flex;
+justify-content: center;
+align-items: flex-end;
+background-image: url(../assets/perrocomiendo.jpg);
+height:60vh;
+width:100%;
+background-size: cover;
+background-position:50% 35%;
+margin:0;
+padding:0;
 }
 .header-juguetes h1{
-    border-radius:10px;
-    color:white;
-    background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
-    width: 70%;
-    text-align:center;
-    padding: 2px;
-    height: 1.4em;
+border-radius:10px;
+color:white;
+background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
+width: 70%;
+text-align:center;
+padding: 2px;
+height: 1.4em;
 }
 
 /*FARMACIA*/
 
 .header-farmacia{
-    display:flex;
-        justify-content: center;
-        align-items: flex-end;
-        background-image: url(../assets/gato.jpg);
-        height:60vh;
-        width:100%;
-        background-size: cover;
-        background-position:50% 35%;
-        margin:0;
-        padding:0;
+display:flex;
+justify-content: center;
+align-items: flex-end;
+background-image: url(../assets/gato.jpg);
+height:60vh;
+width:100%;
+background-size: cover;
+background-position:50% 35%;
+margin:0;
+padding:0;
 }
 .header-farmacia h1{
-    border-radius:10px;
-    color:white;
-    background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
-    width: 70%;
-    text-align:center;
-    padding: 2px;
-    height: 1.4em;
+border-radius:10px;
+color:white;
+background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
+width: 70%;
+text-align:center;
+padding: 2px;
+height: 1.4em;
 }
 
 .contenedor{
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-    padding-top: 2rem;
+width: 100%;
+max-width: 1200px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+margin: auto;
+padding-top: 2rem;
 }
 
 .contenedor .cartas{
-    width: 330px;
-    height: 430px;
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin: 10px;
-    text-align: center;
-    transition: all .25s;
-    background-color: rgba(255, 255, 255, 0.575);
-    border: 1px solid black;
-    color: rgb(0, 0, 0);
+width: 330px;
+height: 430px;
+border-radius: 8px;
+box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+overflow: hidden;
+margin: 10px;
+text-align: center;
+transition: all .25s;
+background-color: rgba(255, 255, 255, 0.575);
+border: 1px solid black;
+color: rgb(0, 0, 0);
 }
 
 .contenedor .cartas img{
-    width: 200px;
-    height: 200px;
-    margin: auto;
+width: 200px;
+height: 200px;
+margin: auto;
 }
 
 .contenedor .cartas h3{
-    font-size: 2rem;
-    border-bottom: 2px solid rgb(255, 255, 255);
-    font-weight: 600;
+font-size: 2rem;
+border-bottom: 2px solid rgb(255, 255, 255);
+font-weight: 600;
 }
 
 .contenedor .cartas p{
-    padding: 0 1rem;
-    font-size: 17px;
-    font-weight: 300;
+padding: 0 1rem;
+font-size: 17px;
+font-weight: 300;
 }
 
 .info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+padding: 1rem;
 }
 
 .info input{
-    width: 18%;
-    text-align: center;
+width: 18%;
+text-align: center;
 }
 
 .info button{
-    background-color: rgb(79, 79, 245);
-    padding: 8px 15px;
-    border-radius: 5px;
-    border: 1px solid rgb(1, 1, 190);
-    color: white;
+background-color: rgb(79, 79, 245);
+padding: 8px 15px;
+border-radius: 5px;
+border: 1px solid rgb(1, 1, 190);
+color: white;
 }
 .info button:hover{
-    background-color: rgb(20, 20, 160);
-    transition: .3s;
+background-color: rgb(20, 20, 160);
+transition: .3s;
 }
