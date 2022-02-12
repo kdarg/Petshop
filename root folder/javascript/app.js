@@ -41,11 +41,18 @@ show_local_storage()
 const update = function(event){
 	favorites.push(event)
 
-	let favorites_array = [...favorites]
+	let favorites_set = new Set(favorites)
+
+	let favorites_array = [...favorites_set]
 
 	localStorage.setItem('favoritos', JSON.stringify(favorites_array))
 
 	show_local_storage()
+}
+
+const remove = function(event){
+	favorites.push(event)
+
 }
 
 window.update = update
@@ -66,6 +73,8 @@ const display_data = function(){
 						    <p class='fw-bold text-info fs-4'>${objects[i].precio}$</p>
 						    <p>Cantidad: <input type="number"></p>
 						    <p>Ultimas unidades</p>
+						    <button onClick="update('${objects[i]._id}')">Agregar al carrito</button>
+
 						    <button onClick="update('${objects[i]._id}')">Agregar al carrito</button>
 						</div>
 					</div>
