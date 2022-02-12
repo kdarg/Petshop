@@ -1,6 +1,8 @@
 let page = document.querySelector('.page')
 let container = document.querySelector('.contenedor')
 let submit = document.querySelector('#submit')
+let shop_counter = document.querySelector('#shop-counter')
+let favorites = JSON.parse(localStorage.getItem('favoritos')) || []
 
 const get_data = async function(){
 
@@ -15,12 +17,38 @@ const get_data = async function(){
 
 const objects = await get_data()
 
-
-
 const show_warning_form = function(){
 	let forms = document.getElementsByClassName('check-len')
-	console.log(forms)
 }
+
+let local_length = []
+
+const show_local_storage = function(){
+
+	if (favorites.length != 0){
+		local_length = favorites
+	} else{
+		local_length = []
+	}
+
+	console.log(local_length)
+
+	shop_counter.innerHTML = local_length.length - 1
+}
+
+show_local_storage()
+
+const update = function(event){
+	favorites.push(event)
+
+	let favorites_array = [...favorites]
+
+	localStorage.setItem('favoritos', JSON.stringify(favorites_array))
+
+	show_local_storage()
+}
+
+window.update = update
 
 
 const display_data = function(){
@@ -38,7 +66,7 @@ const display_data = function(){
 						    <p class='fw-bold text-info fs-4'>${objects[i].precio}$</p>
 						    <p>Cantidad: <input type="number"></p>
 						    <p>Ultimas unidades</p>
-						    <button>Agregar al carrito</button>
+						    <button onClick="update('${objects[i]._id}')">Agregar al carrito</button>
 						</div>
 					</div>
 					`
@@ -52,7 +80,7 @@ const display_data = function(){
 					    <h3 class='fs-5'>${objects[i].nombre}</h3>
 					    <p class='fw-bold text-info fs-4'>${objects[i].precio}$</p>
 					    <p>Cantidad: <input type="number"></p>
-					    <button>Agregar al carrito</button>
+					    <button onClick="update('${objects[i]._id}')">Agregar al carrito</button>
 					</div>
 				</div>
 				`
@@ -70,7 +98,7 @@ const display_data = function(){
 						    <p class='fw-bold text-info fs-4'>${objects[i].precio}$</p>
 						    <p>Cantidad: <input type="number"></p>
 						    <p>Ultimas unidades</p>
-						    <button>Agregar al carrito</button>
+						    <button onclick="update('${objects[i]._id}')">Agregar al carrito</button>
 						</div>
 					</div>
 					`
@@ -85,7 +113,7 @@ const display_data = function(){
 					    <h3 class='fs-5'>${objects[i].nombre}</h3>
 					    <p class='fw-bold text-info fs-4'>${objects[i].precio} $</p>
 					    <p>Cantidad: <input type="number"></p>
-					    <button>Agregar al carrito</button>
+					    <button onclick="update('${objects[i]._id}')">Agregar al carrito</button>
 					</div>
 				</div>
 
@@ -96,6 +124,7 @@ const display_data = function(){
 	}
 
 	container.innerHTML = inner_html
+
 
 }
 
