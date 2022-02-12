@@ -116,11 +116,12 @@ h1,h2{
 	position:fixed;
 	width:4rem;
 	height:4.3rem;
-	left:111rem;
-	top:2rem;
+	left:93.6%;
+	top:3vh;
+	margin-right:50rem;
 	border-radius:8rem;
 	background-color:white;
-	transition:all .5s ease;
+	transition:background-color .5s ease;
 	cursor:pointer;
 }
 
@@ -142,8 +143,8 @@ h1,h2{
 	position:fixed;
 	border-radius:8rem;
 	background-color:red;
-	left:114.5rem;
-	bottom:52.8rem;
+	left:96.25%;
+	bottom:92.8vh;
 }
 
 body::-webkit-scrollbar{
