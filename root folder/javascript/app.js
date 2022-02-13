@@ -154,9 +154,9 @@ const display_data = function(){
 					<img src="${objects[i].imagen}">
 						<div class="info">
 						    <h3 class='fs-5'>${objects[i].nombre}</h3>
-						    <p class='19fw-bold text-info fs-4'>${objects[i].precio}$</p>
-						    <p>Cantidad: <input value='1' min='1' type="number" id="${objects[i]._id}"></p>
-						    <p>Ultima/s ${objects[i].stock} unidad/es</p>
+						    <p class='fw-bold text-info fs-4'>${objects[i].precio}$</p>
+						    <p class="fw-bold">Cantidad: <input value='1' min='1' type="number" id="${objects[i]._id}"></p>
+						    <p class="text-danger fw-bold">Ultima/s ${objects[i].stock} unidad/es</p>
 						    <button onClick="add('${objects[i]._id}', ${objects[i].stock})">Agregar al carrito</button>
 
 						    <button class='bg-danger' onClick="remove('${objects[i]._id}')">Eliminar</button>
@@ -172,7 +172,7 @@ const display_data = function(){
 					<div class="info">
 					    <h3 class='fs-5'>${objects[i].nombre}</h3>
 					    <p class='fw-bold text-info fs-4'>${objects[i].precio}$</p>
-					    <p>Cantidad: <input value='1' min='1' type="number" id="${objects[i]._id}"></p>
+					    <p class="fw-bold">Cantidad: <input value='1' min='1' type="number" id="${objects[i]._id}"></p>
 					    <button onClick="add('${objects[i]._id}')">Agregar al carrito</button>
 
 					    <button class='bg-danger' onClick="remove('${objects[i]._id}')">Eliminar</button>
@@ -191,8 +191,8 @@ const display_data = function(){
 						<div class="info">
 						    <h3 class='fs-5'>${objects[i].nombre}</h3>
 						    <p class='fw-bold text-info fs-4'>${objects[i].precio}$</p>
-						    <p>Cantidad: <input value='1' min='1' type="number" id="${objects[i]._id}"></p>
-						    <p>Ultima/s ${objects[i].stock} unidad/es</p>
+						    <p class="fw-bold">Cantidad: <input value='1' min='1' type="number" id="${objects[i]._id}"></p>
+						    <p class="text-danger fw-bold">Ultima/s ${objects[i].stock} unidad/es</p>
 						    <button onclick="add('${objects[i]._id}', ${objects[i].stock})">Agregar al carrito</button>
 
 						    <button class='bg-danger' onClick="remove('${objects[i]._id}')">Eliminar</button>
@@ -209,7 +209,7 @@ const display_data = function(){
 					<div class="info">
 					    <h3 class='fs-5'>${objects[i].nombre}</h3>
 					    <p class='fw-bold text-info fs-4'>${objects[i].precio} $</p>
-					    <p>Cantidad: <input value='1' type="number" min='1' id="${objects[i]._id}"></p>
+					    <p class="fw-bold">Cantidad: <input value='1' type="number" min='1' id="${objects[i]._id}"></p>
 					    <button onclick="add('${objects[i]._id}')">Agregar al carrito</button>
 
 					    <button class='bg-danger' onClick="remove('${objects[i]._id}')">Eliminar</button>
