@@ -3,6 +3,10 @@ let container = document.querySelector('.contenedor')
 let submit = document.querySelector('#submit')
 let shop_counter = document.querySelector('#shop-counter')
 let scroll_to_top = document.querySelector('#scroll_top')
+let nav_logo = document.querySelector('#logo')
+let nav = document.querySelector('#nav')
+let shop_logo = document.querySelector('#shop-a')
+let shop_container = document.querySelector('.shop-container')
 
 const get_data = async function(){
 
@@ -17,15 +21,13 @@ const get_data = async function(){
 
 const objects = await get_data()
 
-function scroll_top(){
-}
-
 const Toast = Swal.mixin({
 	toast: true,
-	position: 'bottom-end',
+	position: 'center-end',
 	showConfirmButton: false,
 	timer: 3000,
 	timerProgressBar: true,
+	width:'21rem',
 
 	didOpen: (toast) => {
 	toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -33,11 +35,18 @@ const Toast = Swal.mixin({
 }
 })
 
+// TOOLTIP
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('.tt'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
 
 const show_warning_form = function(){
 	let forms = document.getElementsByClassName('check-len')
 	let array_forms = [...forms]
-	let check_numbers = ['1','2','3','4', '5', '6', '7', '8', '9', '0']
+	let check_numbers = ['1', '2', '3', '4', '5', '6', '7', '8','9', '0']
+
 	let flag = true
 
 	array_forms.forEach((evento) => {
@@ -77,7 +86,6 @@ const show_local_storage = function(){
 	} else{
 		local_length = []
 	}
-
 	shop_counter.innerHTML = local_length.length 
 }
 
@@ -86,6 +94,17 @@ show_local_storage()
 const add = function(event, check_quantities){
 	let favorites = JSON.parse(localStorage.getItem('favoritos')) || []
 	let quantity = document.getElementById(event).value
+	let object_flag = true
+
+	favorites.forEach((object) => {
+		if (object[0] == event){
+			object_flag = false
+		}
+	})
+
+	if (!object_flag){
+		return
+	}
 
 	if (quantity > check_quantities){
 		Toast.fire({
@@ -96,20 +115,19 @@ const add = function(event, check_quantities){
 		return
 	}
 
-	favorites.push(event)
+	let data = [event, quantity]
 
-	let favorites_set = new Set(favorites)
+	favorites.push(data)
 
-	let favorites_array = [...favorites_set]
+	localStorage.setItem('favoritos', JSON.stringify(favorites))
 
-	localStorage.setItem('favoritos', JSON.stringify(favorites_array))
-
-	show_local_storage()
-	
 	Toast.fire({
 		icon: 'success',
 		title: `Articulo agregado ( ${quantity} unidades )`
 	  })
+
+	show_local_storage()
+	display_shop()
 }
 
 const remove = function(event){
@@ -118,32 +136,58 @@ const remove = function(event){
 
 	let quantity = document.getElementById(event).value
 
-	if(favorites.includes(event)){
-		Toast.fire({
-			icon: 'error',
-			title:  `Articulo eliminado ( ${quantity} unidades )`
-		  })
-	}
+	favorites.forEach((object) => {
+		if (object[0] == event){
+			Toast.fire({
+				icon: 'error',
+				title:  `Articulo/s eliminado/s`
+			  })
+		}
+	})
 
-	let favorites_set = new Set(favorites)
-
-	let favorites_array = [...favorites_set]
-
-	let favorites_decrease = favorites_array.filter(product_id => product_id != event)
+	let favorites_decrease = favorites.filter(product_id => product_id[0] != event)
 
 	localStorage.setItem('favoritos', JSON.stringify(favorites_decrease))
 
-
 	show_local_storage()
-
-
+	display_shop()
 }
 
 window.add = add
 window.remove = remove
 
-const display_data = function(){
+const display_shop = function(){
+	let favorites = JSON.parse(localStorage.getItem('favoritos')) || []
 	let inner_html = String()
+
+	let total = Number()
+
+	favorites.map((favorite) => {
+		objects.map((event) => {
+			if (favorite[0] == event._id){
+				inner_html += `
+				<p class=' k'>${event.nombre}</p>
+				<p>${event.precio}</p>
+				<p>${favorite[1]}</p>
+				`
+				total += (event.precio * favorite[1])
+			}
+		})
+	})
+
+	inner_html += `
+	<p>${total}$ total a pagar</p>
+	`
+
+	shop_container.innerHTML = inner_html
+
+
+}
+
+display_shop()
+
+const display_data = function(){
+        let inner_html = String()
 
 	for (let i=0; i<objects.length; i++){
 		if(page.id == 'farmacia'){
@@ -225,14 +269,13 @@ const display_data = function(){
 	container.innerHTML = inner_html
 }
 
-if (page.id != 'contacto' && page.id != 'home' && page.id != 'proximamente'){
+if (page.id != 'contacto' && page.id != 'home' && page.id != 'proximamente' && page.id!='shop'){
 	display_data()
 }
 
 if (page.id == 'contacto'){
 	submit.addEventListener('click', show_warning_form)
 }
-
 
 // proximamente - countdown 
 
@@ -263,12 +306,20 @@ if (page.id == 'proximamente'){
 	},1000)
 }
 
-scroll_to_top.addEventListener('click', scroll_top)
-
-
-//tooltip
-
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('.tt'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
+nav_logo.addEventListener('click', () => { 
+    nav.classList.toggle('activo')
 })
+
+shop_logo.addEventListener('click', () => {
+	shop_container.classList.toggle('shop_active')
+})
+
+window.addEventListener('scroll', () => {
+	if (document.documentElement.scrollTop <= 500){
+		scroll_to_top.style.right = '-5vw'
+	} else{
+		scroll_to_top.style.right = '3vw'
+	}
+})
+
+

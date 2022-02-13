@@ -83,7 +83,7 @@ h2 {
   cursor: pointer;
   font-weight: bold;
   color: white;
-  z-index: 1111;
+  z-index: 2;
   transition: all 0.5s ease;
   width: 30;
   height: 30;
@@ -278,7 +278,6 @@ body {
 #scroll_top{
     position:fixed;
     bottom:5vh;
-    right:5vw;
     width:3.5rem;
     transition: all 1s;
     z-index: 1;
@@ -654,30 +653,48 @@ body {
   flex: 1 1 20px;
 }
 
+/* ///////////////////////////////////////////////////////////////////////////////////////SHOP*/ 
+
+#shop-a{
+	text-decoration:none;
+	color:inherit;
+}
+
+.shop-container{
+	z-index:3;
+	border:2px solid black;
+	position:fixed;
+	width:25rem;
+	height:35rem;
+	top:12vh;
+	right:0vw;
+	background-color:white;
+	transition:all .5s ease;
+}
+
+.shop_active{
+	right:-100rem;
+}
+
 /* ///////////////////////////////////////////////////////////////////////////////////////MEDIA QUERY*/
 
 
 
-
 @media(max-width: 520px){ 
-  
-  .header h1{ font-size: 2rem;}
-  
-    
-  }
 
-  @media(max-width: 438px){ 
-   
-    .header h1{ font-size: 1.5rem;}
-    
-      
-    }
-  @media(max-width: 375px){ 
-    .header{background-position: none;}
-    .header h1{ font-size: 1rem;}
-    .sidebar{background: transparent;}
-    
-    
-    }
+	.header h1{ font-size: 2rem;}
+}
+
+@media(max-width: 438px){ 
+
+	.header h1{ font-size: 1.5rem;}
+
+}
+@media(max-width: 375px){ 
+	.header{background-position: none;}
+	.header h1{ font-size: 1rem;}
+	.sidebar{background: transparent;}
+	.activo{background:red}
+}
 
 
