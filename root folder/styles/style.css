@@ -1,540 +1,687 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400&family=Staatliches&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400&family=Staatliches&display=swap");
 
-main, header, footer{
-    width:100%;
-    transition: opacity .5s ease;
-}
-h1,h2{
-    font-family: 'Staatliches', cursive;
+main,
+header {
+  width: 100%;
+  transition: opacity 0.5s ease;
 }
 
-.sidebar{
-        z-index:1;
-        position:fixed;
-        left:-5rem;
-        height:100%;
-        width:9rem;
-        background-color:#787878;
-        transition:all .5s ease;
+.bgimage {
+  background: url(../assets/congruent_pentagon.png) repeat;
 }
 
-.sidebar ul{
-        height:90vh;
-	padding:0;
-        margin-top:3rem;
-        display:flex;
-        justify-content:space-around;
-        flex-direction:column;
-	list-style-type:none;
+.bgimagedos {
+  background: url(../assets/floor-tile.png) repeat;
 }
 
-.sidebar ul li{
-	position:relative;
-	left:-10rem;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	transition:all .6s ease;
+h1,
+h2 {
+  font-family: "Staatliches", cursive;
 }
 
-.sidebar ul a{
-	position:relative;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        padding:1rem;
-        color:white;
-        text-decoration:none;
-        font-weight:bold;
-        font-size:1rem;
-        transition:all 200ms ease;
-	border-radius:8rem;
+.sidebar {
+  z-index: 1;
+  position: fixed;
+  left: -5rem;
+  height: 100%;
+  width: 9rem;
+  background-color: #96a3a0;
+  transition: all 0.5s ease;
 }
 
-.sidebar ul a:hover{
-        padding-left:2rem;
-        background-color:#bd9997;
-	padding:1.5rem;
+.sidebar ul {
+  height: 90vh;
+  padding: 0;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  list-style-type: none;
 }
 
-#check{
-        display:none;
+.sidebar ul li {
+  position: relative;
+  left: -10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s ease;
 }
 
-#open_sb{
-        position:fixed;
-        top:1rem;
-        left:.5rem;
-        cursor:pointer;
-        font-weight:bold;
-        color:white;
-        z-index:1111;
-        transition:all .5s ease;
-	width:30;
-	height:30;
+.sidebar ul a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 200ms ease;
+  border-radius: 8rem;
 }
 
-#logo{
-    position:fixed;
-    width:3rem;
-    height:3rem;
-    margin:0;
-    padding:0;
-    border-radius:8rem;
-    transition:all .5s ease;
+.sidebar ul a:hover {
+  padding-left: 2rem;
+  background-color: #1e9779;
+  padding: 1.5rem;
 }
 
-#logo:hover{
-	background-color:white;
+#check {
+  display: none;
 }
 
-#check:checked ~ .sidebar{
-        left:0;
+#open_sb {
+  position: fixed;
+  top: 1rem;
+  left: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  z-index: 1111;
+  transition: all 0.5s ease;
+  width: 30;
+  height: 30;
 }
 
-#check:checked ~ #open_sb{
-        left:3rem;
+#logo {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  margin: 0;
+  padding: 0;
+  border-radius: 8rem;
+  transition: all 0.5s ease;
 }
 
-#check:checked ~ .sidebar ul li{
-	left:0;
+#logo:hover {
+  background-color: white;
 }
 
-#check:checked ~ nav ~ *{
-	opacity:0.5;
-	transition: opacity .5s ease;
+#check:checked ~ .sidebar {
+  left: 0;
 }
 
-#open_sb:hover{
-	color:blue;
+#check:checked ~ #open_sb {
+  left: 3rem;
 }
 
-.shop{
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	position:fixed;
-	width:4rem;
-	height:4.3rem;
-	left:93.6%;
-	top:3vh;
-	margin-right:50rem;
-	border-radius:8rem;
-	background-color:white;
-	transition:background-color .5s ease;
-	cursor:pointer;
+#check:checked ~ .sidebar ul li {
+  left: 0;
 }
 
-.shop:hover{
-	background-color:yellow;
+#check:checked ~ nav ~ * {
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
 }
 
-#shop-icon{
-	width:3rem;
-	height:3rem;
+#open_sb:hover {
+  color: blue;
 }
 
-#shop-counter{
-	font-weight:bold;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	width:1.3rem;
-	position:fixed;
-	border-radius:8rem;
-	background-color:red;
-	left:96.25%;
-	bottom:92.8vh;
+.shop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 4rem;
+  height: 4.3rem;
+  left: 93.6%;
+  top: 3vh;
+  margin-right: 50rem;
+  border-radius: 8rem;
+  background-color: white;
+  transition: background-color 0.5s ease;
+  cursor: pointer;
+  z-index: 1;
 }
 
-body::-webkit-scrollbar{
-    width: 15px;
-    }
-    
-body::-webkit-scrollbar-thumb{
-    background-color: rgb(5, 225, 233);
-    border-radius: 5px;
-    }
-         
-    /*    ////////////////////LEANDRO///////////////// */
-.header{
-display:flex;
-justify-content: center;
-align-items: flex-end;
-background-image: url(../assets/perro-Schnauzer.jpg);
-height:60vh;
-width:100%;
-background-size: cover;
-background-position:50% 35%;
-margin:0;
-padding:0;
+.shop:hover {
+  background-color: rgb(196, 255, 235);
+}
 
+#shop-icon {
+  width: 3rem;
+  height: 3rem;
 }
-.header h1{
-border-radius:10px;
-color:white;
-background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
-width: 70%;
-display: flex;
-justify-content: center;
-align-items: center;
-/* text-align:center; */
-padding: 2px;
-height: 1.4em;
-}
-.card2{
-display:flex;
-justify-content:space-evenly;
-flex-wrap:wrap;
-width:100%;
-}
-body{
-align-items:center;
-justify-content:center;
-min-height:100vh;
-background: rgb(9, 74, 136);
-width: 100%;
 
+#shop-counter {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.3rem;
+  position: fixed;
+  border-radius: 8rem;
+  background-color: red;
+  left: 96.25%;
+  bottom: 90vh;
 }
-.card{
-position:relative;
-width:35rem;
-height:25rem;
-margin-top:5em;
-margin-bottom:2em;
-}
-.card .face{
-position:absolute;
-width:100%;
-height:100%;
-backface-visibility: hidden;
-border-radius:10px;
-overflow:hidden;
-transition: .5s;
-}
-.card .front{
-transform:perspective(600px) rotateY(0deg);
-box-shadow:0px 5px 10px #000;
-}
-.card .front img{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-}
-.card .front h3{
-position:absolute;
-bottom:4rem;
-width:100%;
-height:45px;
-line-height: 45px;
-color:#fff;
-background: rgba(0,0,0,.4);
-text-align: center;
 
+body::-webkit-scrollbar {
+  width: 15px;
 }
-.card .back{
-transform:perspective(600px) rotateY(180deg);
-background:rgb(3,35,54);
-padding:15px;
-color:#f3f3f3;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-text-align:center;
-box-shadow: 0 5px 10px #000;
-}
-.card .back .link{
-border-top:solid 1px #f3f3f3;
-height: 50px;
-line-height: 50px;
 
+body::-webkit-scrollbar-thumb {
+  background-color: #1e9779;
+  border-radius: 5px;
 }
-.card .back .link a{
-color:#f3f3f3;
 
+/*    ////////////////////LEANDRO///////////////// */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url(../assets/perro-Schnauzer.jpg);
+  height: 70vh;
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 35%;
+  margin: 0;
+  padding: 0;
 }
-.card .back h3{
-font-size:30px;
-margin-top:20px;
-letter-spacing:2px;
+.header h1 {
+  border-radius: 10px;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 0) 0%,
+    #1e9779 50%,
+    rgba(131, 58, 180, 0) 100%
+  );
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  height: 1.4em;
 }
-.card:hover .front{
-transform: perspective(600px) rotateY(180deg);
+.card2 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
 }
-.card:hover .back{
-transform: perspective(600px) rotateY(360deg);
+body {
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: rgb(9, 74, 136);
+  width: 100%;
+}
+.card {
+  position: relative;
+  width: 35rem;
+  height: 25rem;
+  margin-top: 5em;
+  margin-bottom: 2em;
+  border: none !important;
+  background-color: transparent !important;
+}
+.card .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.card .front {
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0px 5px 10px #000;
+}
+.card .front img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card .front h3 {
+  position: absolute;
+  bottom: 4rem;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+.card .back {
+  transform: perspective(600px) rotateY(180deg);
+  background: rgb(58, 150, 150);
+  padding: 15px;
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 5px 10px #000;
+}
+.card .back .link {
+  border-top: solid 1px #f3f3f3;
+  height: 50px;
+  line-height: 50px;
+}
+.card .back .link a {
+  color: #f3f3f3;
+}
+.card .back h3 {
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+.card:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+}
+.card:hover .back {
+  transform: perspective(600px) rotateY(360deg);
 }
 /* /////////////////////////////////////////////////Mauri//////////////////////// */
 
 .container-cards {
-max-width: 1200px;
-margin: auto;
-/* margin-top: 100px; */
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  /* margin-top: 100px; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card-personal {
-width: 300px;
-margin: 10px;
+  width: 300px;
+  margin: 10px;
 }
 
 .card-personal:hover {
-/* width: 350px; */
-transition: all 600ms;
+  /* width: 350px; */
+  transition: all 600ms;
 }
 
 .card-personal:hover .cover img {
-top: 0;
-transition: all 400ms;
-filter: none;
+  top: 0;
+  transition: all 400ms;
+  filter: none;
 }
 
 .custom-img {
-width: 250px;
+  width: 250px;
 }
 
 .card-personal .cover {
-position: relative;
-width: 100%;
-height: 250px;
-overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
 }
 
 .card-personal .cover img {
-width: 250px;
-display: block;
-position: relative;
-z-index: 1;
-top: 40px;
-margin-left: 1rem;
-filter: drop-shadow(5px 5px 4px rgba( 0,0,0,0.5));
+  width: 250px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  top: 40px;
+  margin-left: 1rem;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.5));
 }
 
 .card-personal .img-back {
-width: 100%;
-height: 200px;
-position: absolute;
-background-size: cover;
-bottom: -80px;
-left: 0;
-border-radius: 20px;
-transition: all 300ms;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  background-size: cover;
+  bottom: -80px;
+  left: 0;
+  border-radius: 20px;
+  transition: all 300ms;
 }
 
 .card-personal:nth-of-type(1) .img-back {
-background-image: url(../assets/background-personal.jpg);
+  background-color: rgb(96, 187, 187);
 }
 .card-personal:nth-of-type(2) .img-back {
-background-image: url(../assets/background-personal.jpg);
+  background-color: rgb(96, 187, 187);
 }
 .card-personal:nth-of-type(3) .img-back {
-background-image: url(../assets/background-personal.jpg);
+  background-color: rgb(96, 187, 187);
 }
 
 .card-personal:hover .img-back {
-bottom: -40px;
+  bottom: -40px;
 }
 
 .card-personal .description {
-background-color: white;
-margin-top: -10px;
-padding: 20px;
-border-radius: 0px 0px 20px 20px;
-transition: all 300ms;
+  /* background-color: white; */
+  background: url(../assets/square_bg.png);
+  margin-top: -10px;
+  padding: 20px;
+  border-radius: 0px 0px 20px 20px;
+  transition: all 300ms;
 }
 
-
 .card-personal .description h2 {
-margin-top: 10px;
+  margin-top: 10px;
 }
 
 .card-personal .description p {
-margin-top: 10px;
+  margin-top: 10px;
 }
 
 .card-personal .description input {
-padding: 10px 40px;
-margin-top: 20px;
-border: none;
-background-color: blueviolet;
-color: white;
-font-size: 14px;
-cursor: pointer;
-border-radius: 8px;
-transition: all 300ms;
+  padding: 10px 40px;
+  margin-top: 20px;
+  border: none;
+  background-color: blueviolet;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 300ms;
 }
 
 .card-personal .description input:hover {
-background-color: rgb(88, 24, 148);
+  background-color: rgb(88, 24, 148);
 }
 
 .custom-input {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .custom-h2 {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.custom-p{
-margin-left: 2.2rem;
-}
+/* .custom-p{
+margin-left: 2rem;
+} */
 
-.conocenos h2{
-border-radius:10px;
-color:white;
-background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
-width: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-/* text-align:center; */
-margin-top: 1em;
-height: 1.4em;
+.conocenos h2 {
+  border-radius: 10px;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 0) 0%,
+    #1e9779 50%,
+    rgba(131, 58, 180, 0) 100%
+  );
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* text-align:center; */
+  margin-top: 1em;
+  height: 1.4em;
 }
 
 /*Juguetes*/
-.header-juguetes{
-display:flex;
-justify-content: center;
-align-items: flex-end;
-background-image: url(../assets/perrocomiendo.jpg);
-height:60vh;
-width:100%;
-background-size: cover;
-background-position:50% 35%;
-margin:0;
-padding:0;
+.header-juguetes {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url(../assets/perrocomiendo.jpg);
+  height: 70vh;
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 35%;
+  margin: 0;
+  padding: 0;
 }
-.header-juguetes h1{
-border-radius:10px;
-color:white;
-background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
-width: 70%;
-text-align:center;
-padding: 2px;
-height: 1.4em;
+.header-juguetes h1 {
+  border-radius: 10px;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 0) 0%,
+    #eec554 50%,
+    rgba(131, 58, 180, 0) 100%
+  );
+  width: 70%;
+  text-align: center;
+  padding: 2px;
+  height: 1.4em;
 }
 
 /*FARMACIA*/
 
-.header-farmacia{
-display:flex;
-justify-content: center;
-align-items: flex-end;
-background-image: url(../assets/gato.jpg);
-height:60vh;
-width:100%;
-background-size: cover;
-background-position:50% 35%;
-margin:0;
-padding:0;
+.header-farmacia {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url(../assets/gato.jpg);
+  height: 70vh;
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 35%;
+  margin: 0;
+  padding: 0;
 }
-.header-farmacia h1{
-border-radius:10px;
-color:white;
-background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
-width: 70%;
-text-align:center;
-padding: 2px;
-height: 1.4em;
-}
-
-.contenedor{
-width: 100%;
-max-width: 1200px;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-margin: auto;
-padding-top: 2rem;
+.header-farmacia h1 {
+  border-radius: 10px;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 0) 0%,
+    rgba(100, 223, 253, 0.8) 50%,
+    rgba(131, 58, 180, 0) 100%
+  );
+  width: 70%;
+  text-align: center;
+  padding: 2px;
+  height: 1.4em;
 }
 
-.contenedor .cartas{
-width: 330px;
-height: 500px;
-border-radius: 8px;
-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-overflow: hidden;
-margin: 10px;
-margin-left:3.7rem;
-text-align: center;
-transition: all .25s;
-background-color: rgba(255, 255, 255, 0.575);
-border: 1px solid black;
-color: rgb(0, 0, 0);
+.contenedor {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  padding-top: 2rem;
 }
 
-.contenedor .cartas img{
-width: 200px;
-height: 200px;
-margin: auto;
+.contenedor .cartas {
+  width: 330px;
+  height: 500px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 10px;
+  margin-left: 3.7rem;
+  text-align: center;
+  transition: all 0.25s;
+  background-color: rgba(255, 255, 255);
+  border: 1px solid black;
+  color: rgb(0, 0, 0);
 }
 
-.contenedor .cartas h3{
-border-bottom: 2px solid rgb(255, 255, 255);
-font-weight: 600;
+.contenedor .cartas img {
+  width: 200px;
+  height: 200px;
+  margin: auto;
 }
 
-.contenedor .cartas p{
-padding: 0 1rem;
-font-size: 17px;
-font-weight: 300;
+.contenedor .cartas h3 {
+  border-bottom: 2px solid rgb(255, 255, 255);
+  font-weight: 600;
 }
 
-.info{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
-padding: 1rem;
+.contenedor .cartas p {
+  padding: 0 1rem;
+  font-size: 17px;
+  font-weight: 300;
 }
 
-.info input{
-width: 18%;
-text-align: center;
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
-.info button{
-background-color: rgb(79, 79, 245);
-padding: 8px 15px;
-border-radius: 5px;
-border: 1px solid rgb(1, 1, 190);
-color: white;
-}
-.info button:hover{
-background-color: rgb(20, 20, 160);
-transition: .3s;
+.info input {
+  width: 18%;
+  text-align: center;
 }
 
+.info button {
+  background-color: rgb(79, 79, 245);
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 1px solid rgb(1, 1, 190);
+  color: white;
+}
+.info button:hover {
+  background-color: rgb(20, 20, 160);
+  transition: 0.3s;
+}
 
 /* ----------------------------------formulario */
 
-.header-contact{
-        display:flex;
-        justify-content: center;
-        align-items: flex-end;
-        background-image: url(../assets/gato-contact.jpeg);
-        height:60vh;
-        width:100%;
-        background-size: cover;
-        background-position:50% 60%;
-        margin:0;
-        padding:0;
-
+.header-contact {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url(../assets/gato-contact.jpeg);
+  height: 70vh;
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 60%;
+  margin: 0;
+  padding: 0;
 }
-.header-contact h1{
-        border-radius:10px;
-        color:white;
-        background: linear-gradient(90deg, rgba(131,58,180,0) 0%, rgba(233,5,94,0.80) 50%, rgba(131,58,180,0) 100%); 
-        width: 70%;
-        text-align:center;
-        padding: 2px;
-        height: 1.4em;
+.header-contact h1 {
+  border-radius: 10px;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 0) 0%,
+    rgba(236, 146, 27, 0.8) 50%,
+    rgba(131, 58, 180, 0) 100%
+  );
+  width: 70%;
+  text-align: center;
+  padding: 2px;
+  height: 1.4em;
 }
 
+/* ---------------------------------------------------------------footer */
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: solid rgba(0, 0, 0, 0.15);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+    inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
+
+.bi {
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+.custom-img-li {
+  width: 150px;
+}
+.hover-footer:hover {
+  color: rgb(30, 169, 179);
+}
+
+.karen {
+  padding-left: 9rem;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+/* -------------------------------------------------proximamente */
+
+.header-prox {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url(../assets/peluqueria.png);
+  height: 70vh;
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 35%;
+  margin: 0;
+  padding: 0;
+}
+.header-prox h1 {
+  border-radius: 10px;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 0) 0%,
+    #c22c2c 50%,
+    rgba(131, 58, 180, 0) 100%
+  );
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2px;
+  height: 1.4em;
+}
+
+.contenedor-pelu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  gap: 15px;
+  padding: 20px 7%;
+  padding-bottom: 80px;
+}
+
+.contenedor-pelu .content-pelu {
+  flex: 1 1 400px;
+}
+
+.contenedor-pelu .img-pelu {
+  flex: 1 1 400px;
+}
+
+.contenedor-pelu .img-pelu img {
+  width: 100%;
+}
+
+.contenedor-pelu .content-pelu .title-pelu {
+  text-transform: uppercase;
+  font-size: 45px;
+}
+
+.contenedor-pelu .content-pelu p {
+  padding: 5px 0;
+}
+
+.contenedor-pelu .content-pelu .subtitle-pelu {
+  font-size: 36px;
+}
+
+.contenedor-pelu .content-pelu .contador-hora {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.contenedor-pelu .content-pelu .contador-hora .box {
+  padding: 5px;
+  border: 1px solid black;
+  text-align: center;
+  flex: 1 1 20px;
+}
+
+.contenedor-pelu .content-pelu .contador-hora .box h3 {
+  font-size: 50px;
+}
+
+.contenedor-pelu .content-pelu .contador-hora .box span {
+  font-size: 20px;
+}
