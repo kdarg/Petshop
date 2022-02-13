@@ -233,11 +233,14 @@ if (page.id == 'contacto'){
 	submit.addEventListener('click', show_warning_form)
 }
 
+
+// proximamente - countdown 
+
 if (page.id == 'proximamente'){
-	let contadorDate = new Date('may 1, 2022 00:00:00').getTime();
+	let contadorDate = new Date('Apr 1, 2022 00:00:00').getTime();
 	function contadorDown(){
 	    let now = new Date().getTime()
-	    let gap = ''  //hacer esto
+	    let gap = '' 
 	    gap = contadorDate - now
 
 	    let segundos = 1000
@@ -263,3 +266,9 @@ if (page.id == 'proximamente'){
 scroll_to_top.addEventListener('click', scroll_top)
 
 
+//tooltip
+
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('.tt'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})

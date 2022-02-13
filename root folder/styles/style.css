@@ -9,7 +9,7 @@ header {
 /* ///////////////////////////////////////////////////////////////////////////////////////FONDOS Y FONT */
 
 .bgimage {
-  background: url(../assets/congruent_pentagon.png) repeat;
+  background: url(../assets/floor-tile\ -\ copia.png) repeat;
 }
 
 .bgimagedos {
@@ -185,6 +185,8 @@ body::-webkit-scrollbar-thumb {
 .header h1 {
   border-radius: 10px;
   color: white;
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
   background: linear-gradient(
     90deg,
     rgba(131, 58, 180, 0) 0%,
@@ -337,13 +339,13 @@ body {
 }
 
 .card-personal:nth-of-type(1) .img-back {
-  background-color: rgb(96, 187, 187);
+  background-color: rgb(235, 100, 168);
 }
 .card-personal:nth-of-type(2) .img-back {
-  background-color: rgb(96, 187, 187);
+  background-color: rgb(255, 210, 64);
 }
 .card-personal:nth-of-type(3) .img-back {
-  background-color: rgb(96, 187, 187);
+  background-color: rgb(46, 172, 223);
 }
 
 .card-personal:hover .img-back {
@@ -351,7 +353,7 @@ body {
 }
 
 .card-personal .description {
-  background: url(../assets/geometric-leaves.png);
+  background: url(../assets/square_bg.png);
   margin-top: -10px;
   padding: 20px;
   border-radius: 0px 0px 20px 20px;
@@ -395,10 +397,11 @@ body {
 .conocenos h2 {
   border-radius: 10px;
   color: white;
+  letter-spacing: 0.2rem;
   background: linear-gradient(
     90deg,
     rgba(131, 58, 180, 0) 0%,
-    #1e9779 50%,
+    #012016 50%,
     rgba(131, 58, 180, 0) 100%
   );
   width: 100%;
@@ -415,6 +418,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
   background-image: url(../assets/perrocomiendo.jpg);
   height: 70vh;
   width: 100%;
@@ -444,6 +449,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
   background-image: url(../assets/gato.jpg);
   height: 70vh;
   width: 100%;
@@ -540,6 +547,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
   background-image: url(../assets/gato-contact.jpeg);
   height: 70vh;
   width: 100%;
@@ -592,13 +601,14 @@ body {
   padding-bottom: 3rem;
 }
 
-
 /* ///////////////////////////////////////////////////////////////////////////////////////PROXIMAMENTE*/
 
 .header-prox {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
   background-image: url(../assets/peluqueria.png);
   height: 70vh;
   width: 100%;
@@ -643,3 +653,31 @@ body {
   text-align: center;
   flex: 1 1 20px;
 }
+
+/* ///////////////////////////////////////////////////////////////////////////////////////MEDIA QUERY*/
+
+
+
+
+@media(max-width: 520px){ 
+  
+  .header h1{ font-size: 2rem;}
+  
+    
+  }
+
+  @media(max-width: 438px){ 
+   
+    .header h1{ font-size: 1.5rem;}
+    
+      
+    }
+  @media(max-width: 375px){ 
+    .header{background-position: none;}
+    .header h1{ font-size: 1rem;}
+    .sidebar{background: transparent;}
+    
+    
+    }
+
+
