@@ -127,9 +127,8 @@ h2 {
   position: fixed;
   width: 4rem;
   height: 4.3rem;
-  left: 93.6%;
+  right:3vw;
   top: 3vh;
-  margin-right: 50rem;
   border-radius: 8rem;
   background-color: white;
   transition: background-color 0.5s ease;
@@ -155,8 +154,8 @@ h2 {
   position: fixed;
   border-radius: 8rem;
   background-color: red;
-  left: 96.25%;
-  bottom: 90vh;
+  right:2.5vw;
+  top: 3.5vh;
 }
 
 body::-webkit-scrollbar {
@@ -277,6 +276,14 @@ body {
 }
 .card:hover .back {
   transform: perspective(600px) rotateY(360deg);
+}
+
+#scroll_top{
+    position:fixed;
+    bottom:5vh;
+    right:5vw;
+    width:2.2rem;
+    transition: all 1s;
 }
 /* /////////////////////////////////////////////////Mauri//////////////////////// */
 

@@ -14,8 +14,7 @@
 </head>
 <body class="">
 
-    <header>
-    </header>
+    <a href="#principio" ><img src="./assets/boton.png" id ="scroll_top"alt=""></a>
 
     <main>
 
@@ -102,7 +101,7 @@
 
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label fw-bold">Teléfono</label>
-                <input type="text" class="form-control check-len" id="exampleInputEmail1" placeholder="Sólo números sin guiones">
+                <input type="number" class="form-control check-len" id="exampleInputEmail1" placeholder="Sólo números sin guiones">
             </div>
             
             <div class="mb-3">
@@ -112,7 +111,7 @@
 
             <div class="mb-3">
               <label for="edadMascota" class="form-label fw-bold">Edad</label>
-              <input type="text" class="form-control check-len" id="edadMascota" placeholder="Edad">
+              <input type="number" class="form-control check-len" id="edadMascota" placeholder="Edad">
           </div>
 
             <div class="mb-3">
@@ -121,28 +120,19 @@
             </div>
                 
             <div class="mb-3">
-                <label for="Checkbox" class="form-label fw-bold">Gato</label>
-		<input id='Checkbox' type='checkbox' name='check' class='check-len'>
-                <label for="Checkbox" class="form-label fw-bold">Perro</label>
-		<input id='Checkbox' type='checkbox' name='check' class='check-len'>
+                <label for="text_animal" class="form-label fw-bold">Mascota</label>
+		<input id='text_animal' type='text' name='check_animal' class='form-control check-len' placeholder='Gato/perro'>
             </div>
 
             <div class="mb-3">
-                <label for="Checkbox" class="form-label fw-bold">Macho</label>
-		<input id='Checkbox' type='radio' name='check' class='check-len'>
-                <label for="Checkbox" class="form-label fw-bold">Hembra</label>
-		<input id='Checkbox' type='radio' name='check' class='check-len'>
+                <label for="text_sexo" class="form-label fw-bold">Sexo</label>
+		<input id='text_sexo' type='text' name='check' class='form-control check-len' placeholder='Macho/hembra'>
             </div>
 
 	    <div class='mb-3'>
 		    <label for='Textarea' class='form-label fw-bold'>Reseña</label>
 		    <input type='textarea' id='Textarea' class="form-control md-textarea" rows="3">
 	    </div>
-
-            <div class="mb-3 form-check">
-		<input type="checkbox" class="form-check-input check-len" id="aceptacion">
-		<label class="form-check-label check-len" for="aceptacion">Toda la información dada es real.</label>
-            </div>
 
         </form>
 
@@ -218,7 +208,8 @@
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type='module' src='./javascript/app.js'></script>
+
 </body>
 </html>
