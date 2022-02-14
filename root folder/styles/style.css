@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400&family=Staatliches&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;500&display=swap');
+
+
 main,
 header {
   width: 100%;
@@ -224,17 +227,17 @@ body {
   overflow: hidden;
   transition: 0.5s;
 }
-.card .front {
+.card .front_ {
   transform: perspective(600px) rotateY(0deg);
   box-shadow: 0px 5px 10px #000;
 }
-.card .front img {
+.card .front_ img {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.card .front h3 {
+.card .front_ h3 {
   position: absolute;
   bottom: 4rem;
   width: 100%;
@@ -243,7 +246,7 @@ body {
   color: #fff;
   background: rgba(0, 0, 0, 0.4);
 }
-.card .back {
+.card .back_ {
   transform: perspective(600px) rotateY(180deg);
   background: rgb(58, 150, 150);
   padding: 1rem;
@@ -254,22 +257,22 @@ body {
   text-align: center;
   box-shadow: 0 5px 10px #000;
 }
-.card .back .link {
+.card .back_ .link {
   border-top: solid 1px #f3f3f3;
   height: 3.1rem;
   line-height: 3.1rem;
 }
-.card .back .link a {
+.card .back_ .link a {
   color: #f3f3f3;
 }
-.card .back h3 {
+.card .back_ h3 {
   margin-top: 1.3rem;
   letter-spacing: 2px;
 }
-.card:hover .front {
+.card:hover .front_ {
   transform: perspective(600px) rotateY(180deg);
 }
-.card:hover .back {
+.card:hover .back_ {
   transform: perspective(600px) rotateY(360deg);
 }
 
@@ -662,7 +665,10 @@ body {
 
 .shop-container{
 	z-index:3;
-	border:2px solid black;
+	border:2px solid rgb(138, 138, 138);
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 15px 0px #5a5a5a8f;
 	position:fixed;
 	width:25rem;
 	height:35rem;
@@ -672,8 +678,29 @@ body {
 	transition:all .5s ease;
 }
 
+.carritoletra{
+  color: black;
+  padding: 0.5rem;
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-size: 1.1rem;
+}
 .shop_active{
 	right:-100rem;
+}
+
+.precionombre{
+  display: flex;
+  justify-content: space-around;
+}
+
+.carritototal{
+  color: black;
+  padding: 0.5rem;
+  background-color: rgba(71, 214, 190, 0.349);
+  font-family: 'Zen Kaku Gothic Antique', sans-serif;
+  font-size: 1rem;
+  display: flex;
+  justify-content: end;
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////////////MEDIA QUERY*/
@@ -694,7 +721,104 @@ body {
 	.header{background-position: none;}
 	.header h1{ font-size: 1rem;}
 	.sidebar{background: transparent;}
-	.activo{background:red}
+	.activo{background:#96a3a0}
 }
 
 
+/* bottoncarrito */
+
+.divcarritocontenedor{
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+.carritobutton {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  touch-action: manipulation;
+  
+ }
+ 
+ .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform
+     600ms
+     cubic-bezier(.3, .7, .4, 1);
+ }
+ 
+ .edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+     to left,
+     hsl(340deg 100% 16%) 0%,
+     hsl(340deg 100% 32%) 8%,
+     hsl(340deg 100% 32%) 92%,
+     hsl(340deg 100% 16%) 100%
+   );
+ }
+ 
+ .front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform
+     600ms
+     cubic-bezier(.3, .7, .4, 1);
+ }
+
+ .carritobutton:hover {
+  filter: brightness(110%);
+ }
+ 
+ .carritobutton:hover .front {
+  transform: translateY(-6px);
+  transition: transform
+     250ms
+     cubic-bezier(.3, .7, .4, 1.5);
+ }
+ 
+ .carritobutton:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+ }
+ 
+ .carritobutton:hover .shadow {
+  transform: translateY(4px);
+  transition: transform
+     250ms
+     cubic-bezier(.3, .7, .4, 1.5);
+ }
+ 
+ .carritobutton:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+ }
+ 
+.carritobutton:focus:not(:focus-visible) {
+  outline: none;
+ }

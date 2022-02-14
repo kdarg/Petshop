@@ -166,9 +166,12 @@ const display_shop = function(){
 		objects.map((event) => {
 			if (favorite[0] == event._id){
 				inner_html += `
-				<p class=' k'>${event.nombre}</p>
-				<p>${event.precio}</p>
-				<p>${favorite[1]}</p>
+				<div class="carritoletra d-flex flex-column justify-content-center">
+
+				<p class=''> <span class='fw-bold mb-0'>- PRODUCTO:</span> ${event.nombre} </p>
+				<p><span class='fw-bold mb-0'>- CANTIDAD:</span> ${favorite[1]}</p>
+				<p><span class='fw-bold mn-0'>- PRECIO:</span> $ ${event.precio}</p>
+				</div>
 				`
 				total += (event.precio * favorite[1])
 			}
@@ -176,7 +179,15 @@ const display_shop = function(){
 	})
 
 	inner_html += `
-	<p>${total}$ total a pagar</p>
+	<p class='carritototal fw-bold p-2'>TOTAL A PAGAR: $ ${total}</p>
+	<div class="divcarritocontenedor p-2">
+	<button id='pressbutton' class="carritobutton">
+  <span class="shadow"></span>
+  <span class="edge"></span>
+  <span class="front text"> PAGAR
+  </span>
+</button>
+</div>
 	`
 
 	shop_container.innerHTML = inner_html
@@ -323,3 +334,10 @@ window.addEventListener('scroll', () => {
 })
 
 
+let carritoButton= document.getElementById('pressbutton')
+
+carritoButton.addEventListener('click',()=> {Swal.fire({
+	title: 'Muchas gracias por tu compra!',
+	text: 'Pronto tendremos listo tu pedido.',
+	
+  })})
