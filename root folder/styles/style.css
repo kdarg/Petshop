@@ -147,6 +147,8 @@ h2 {
   transition: background-color 0.5s ease;
   cursor: pointer;
   z-index: 1;
+  transition:all .5s ease;
+  transition-property:width, height;
 }
 
 .shop:hover {
@@ -718,22 +720,33 @@ body {
 
 
 @media(max-width: 520px){ 
+  .paddingfooter {
+    padding-left: 0rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .header h1{ font-size: 2rem;}
 
-	.header h1{ font-size: 2rem;}
+  .sidebar{background:transparent;}
+  .activo{background:#96a3a0;}
 }
 
 @media(max-width: 438px){ 
-
-	.header h1{ font-size: 1.5rem;}
-  .activo{background:#96a3a0}
-  
-
+  .paddingfooter {
+    padding-left: 0rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .sidebar{background:transparent;}
+  .activo{background:#96a3a0;}
+  .header h1{ font-size: 1.5rem;}
 }
+
 @media(max-width: 375px){ 
-	.header{background-position: none;}
-	.header h1{ font-size: 1rem;}
-	.sidebar{background: transparent;}
-	.activo{background:#96a3a0}
+  .header{background-position: none;}
+  .header h1{ font-size: 1rem;}
+  .sidebar{background: transparent;}
+  .activo{background:#96a3a0}
   .card-responsive {
     margin-top: 5px;
     margin-bottom: 0;
@@ -774,7 +787,8 @@ body {
 }
 
 
-/* bottoncarrito */
+/* ///////////////////////////////////////////////////////////////////////////////////////CARRITO*/
+
 
 .divcarritocontenedor{
   display: flex;

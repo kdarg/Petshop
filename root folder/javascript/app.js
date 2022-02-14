@@ -340,4 +340,4 @@ carritoButton.addEventListener('click',()=> {Swal.fire({
 	title: 'Muchas gracias por tu compra!',
 	text: 'Pronto tendremos listo tu pedido.',
 	
-  })})
+})})
