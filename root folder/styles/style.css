@@ -2,6 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;500&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap');
+
+.p-responsive {
+  font-size: 1.3rem;
+  font-family: 'Roboto Serif', sans-serif;
+}
 
 main,
 header {
@@ -144,7 +150,7 @@ h2 {
 }
 
 .shop:hover {
-  background-color: rgb(196, 255, 235);
+  background-color: #59e4c1;
 }
 
 #shop-icon {
@@ -665,7 +671,8 @@ body {
 
 .shop-container{
 	z-index:3;
-	border:2px solid rgb(138, 138, 138);
+  overflow: auto;
+	border:2px solid rgb(78, 78, 78);
   border-radius: 20px;
   cursor: pointer;
   box-shadow: 0 0 15px 0px #5a5a5a8f;
@@ -674,8 +681,12 @@ body {
 	height:35rem;
 	top:12vh;
 	right:0vw;
-	background-color:white;
+	background-color:rgb(255, 236, 228);
 	transition:all .5s ease;
+}
+
+.custom-border-bottom {
+  border-bottom: 2px solid black;
 }
 
 .carritoletra{
@@ -695,12 +706,11 @@ body {
 
 .carritototal{
   color: black;
-  padding: 0.5rem;
   background-color: rgba(71, 214, 190, 0.349);
   font-family: 'Zen Kaku Gothic Antique', sans-serif;
   font-size: 1rem;
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////////////MEDIA QUERY*/
@@ -715,6 +725,8 @@ body {
 @media(max-width: 438px){ 
 
 	.header h1{ font-size: 1.5rem;}
+  .activo{background:#96a3a0}
+  
 
 }
 @media(max-width: 375px){ 
@@ -722,6 +734,43 @@ body {
 	.header h1{ font-size: 1rem;}
 	.sidebar{background: transparent;}
 	.activo{background:#96a3a0}
+  .card-responsive {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  .card-responsive2{
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .custom-h3 {
+    font-size: 1.5rem;
+  }
+  .p-responsive {
+    font-size: 1rem;
+  }
+  .paddingfooter {
+    padding-left: 0rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .shop {
+    width: 3rem;
+    height: 3rem;
+  }
+  #shop-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  #shop-counter{
+   top: 1.5vh;
+  }
+  .contenedor .cartas{
+    margin-left: 0.5rem;
+  }
+  .shop-container {
+    width: 15rem;
+    height: 25rem;
+  }
 }
 
 
@@ -729,8 +778,8 @@ body {
 
 .divcarritocontenedor{
   display: flex;
-  justify-content: end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 .carritobutton {
   position: relative;
@@ -742,6 +791,7 @@ body {
   transition: filter 250ms;
   user-select: none;
   touch-action: manipulation;
+  margin: auto;
   
  }
  

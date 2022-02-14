@@ -166,7 +166,7 @@ const display_shop = function(){
 		objects.map((event) => {
 			if (favorite[0] == event._id){
 				inner_html += `
-				<div class="carritoletra d-flex flex-column justify-content-center">
+				<div class="carritoletra d-flex flex-column justify-content-center custom-border-bottom">
 
 				<p class=''> <span class='fw-bold mb-0'>- PRODUCTO:</span> ${event.nombre} </p>
 				<p><span class='fw-bold mb-0'>- CANTIDAD:</span> ${favorite[1]}</p>
@@ -184,7 +184,7 @@ const display_shop = function(){
 	<button id='pressbutton' class="carritobutton">
   <span class="shadow"></span>
   <span class="edge"></span>
-  <span class="front text"> PAGAR
+  <span class="front text fw-bold"> PAGAR
   </span>
 </button>
 </div>
@@ -327,7 +327,7 @@ shop_logo.addEventListener('click', () => {
 
 window.addEventListener('scroll', () => {
 	if (document.documentElement.scrollTop <= 500){
-		scroll_to_top.style.right = '-5vw'
+		scroll_to_top.style.right = '-100vw'
 	} else{
 		scroll_to_top.style.right = '3vw'
 	}
