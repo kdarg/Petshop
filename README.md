@@ -1,6 +1,6 @@
 # Petshop
 
-##Integrantes del grupo
+## Integrantes del grupo
 
     Líder - Karen Argüello
     Thiago Chiesa
